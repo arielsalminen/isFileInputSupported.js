@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Input type='file' test</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="isFileInputSupported.js"></script>
+    <script>
+      // Add 'fileinput' class to html if supported
+      if (isFileInputSupported) {
+        document.documentElement.className += " fileinput";
+      }
+    </script>
+    <style>
+      #testel { width: 100px; height: 100px; background: red }
+      .fileinput #testel { background: green }
+    </style>
+  </head>
+  <body>
+    <h1>Input type='file' test</h1>
+    <p>If the box below is green, JavaScript has detected support for input type='file'. Next: try uploading a photo.</p>
+    <div id="testel"></div>
+    <form action="http://www.tipjar.com/cgi-bin/test" enctype="multipart/form-data" method="post">
+      <fieldset>
+        <input type="file" name="image">
+        <input type="submit" value="Upload">
+      </fieldset>
+    </form>
+  </body>
+</html>
